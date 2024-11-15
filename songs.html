@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .songs-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;  /* Allow scrolling */
+            max-height: 400px; /* Adjust the max height of the scrollable container */
+        }
+        .song-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 60px; /* Set height of each song */
+            overflow: hidden;
+        }
+        .song-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .song-item .song-title {
+            flex-grow: 1;
+            text-align: center;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        .song-item .download-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .song-item .download-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; padding: 20px;">Song List</h1>
+
+    <div class="songs-container">
+        <!-- Song 1 -->
+        <div class="song-item">
+            <img src="https://via.placeholder.com/50" alt="Song 1 Image">
+            <div class="song-title">Healing Sounds</div>
+            <a href="https://www.dropbox.com/s/your-dropbox-file-id/song1.mp3?raw=1" class="download-btn" download>Download</a>
+        </div>
+
+        <!-- Song 2 -->
+        <div class="song-item">
+            <img src="https://via.placeholder.com/50" alt="Song 2 Image">
+            <div class="song-title">Focus Music</div>
+            <a href="https://www.dropbox.com/s/your-dropbox-file-id/song2.mp3?raw=1" class="download-btn" download>Download</a>
+        </div>
+
+        <!-- Song 3 -->
+        <div class="song-item">
+            <img src="https://via.placeholder.com/50" alt="Song 3 Image">
+            <div class="song-title">Relaxing Beats</div>
+            <a href="https://www.dropbox.com/s/your-dropbox-file-id/song3.mp3?raw=1" class="download-btn" download>Download</a>
+        </div>
+
+        <!-- Song 4 -->
+        <div class="song-item">
+            <img src="https://via.placeholder.com/50" alt="Song 4 Image">
+            <div class="song-title">Calming Sounds</div>
+            <a href="https://www.dropbox.com/s/your-dropbox-file-id/song4.mp3?raw=1" class="download-btn" download>Download</a>
+        </div>
+
+        <!-- Song 5 -->
+        <div class="song-item">
+            <img src="https://via.placeholder.com/50" alt="Song 5 Image">
+            <div class="song-title">Nature Sounds</div>
+            <a href="https://www.dropbox.com/s/your-dropbox-file-id/song5.mp3?raw=1" class="download-btn" download>Download</a>
+        </div>
+
+        <!-- Song 6 -->
+        <div class="song-item">
+            <img src="https://via.placeholder.com/50" alt="Song 6 Image">
+            <div class="song-title">Healing Sounds 2</div>
+            <a href="https://www.dropbox.com/s/your-dropbox-file-id/song6.mp3?raw=1" class="download-btn" download>Download</a>
+        </div>
+    </div>
+
+</body>
+</html>
