@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cards with Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #00c6ff, #0072ff, #6a82fb, #fc5c7d, #f53844);
+            background-size: 300% 300%;
+            animation: gradient-animation 10s infinite ease-in-out;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+        .card {
+            width: 300px;
+            height: 350px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-header {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .notification-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+            display: none;
+        }
+        .card-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Video Card -->
+    <a href="motivationalvideos.html" class="card" id="videoCard">
+        <img src="https://envs.sh/LUC.jpg" alt="Motivational" class="card-image">
+        <div class="card-header">Motivational</div>
+        <div class="notification-badge" id="videoNotification"></div>
+    </a>
+
+    <!-- Songs Card -->
+    <a href="tricks.html" class="card" id="songCard">
+        <img src="https://envs.sh/LUR.jpg" alt="Tips and Tricks" class="card-image">
+        <div class="card-header">Tips and Tricks</div>
+        <div class="notification-badge" id="songNotification"></div>
+    </a>
+
+    <!-- Post Feed Card -->
+    <a href="calm.html" class="card" id="feedCard">
+        <img src="https://envs.sh/LUk.jpg" alt="Relaxing" class="card-image">
+        <div class="card-header">Relaxing</div>
+        <div class="notification-badge" id="feedNotification"></div>
+    </a>
+</div>
+
+<script>
+    // Show notification badge
+    function showNotification(cardId) {
+        document.getElementById(cardId).style.display = 'block';
+    }
+
+    // Check for new content and show notifications
+    function checkForNewContent() {
+        // Check for new videos
+        if (localStorage.getItem('newVideos') === 'true') {
+            showNotification('videoNotification');
+        }
+
+        // Check for new songs
+        if (localStorage.getItem('newSongs') === 'true') {
+            showNotification('songNotification');
+        }
+
+        // Check for new post feed
+        if (localStorage.getItem('newPosts') === 'true') {
+            showNotification('feedNotification');
+        }
+    }
+
+    // Mark content as seen when clicking on a card
+    document.getElementById('videoCard').addEventListener('click', () => {
+        localStorage.setItem('newVideos', 'false');
+    });
+
+    document.getElementById('songCard').addEventListener('click', () => {
+        localStorage.setItem('newSongs', 'false');
+    });
+
+    document.getElementById('feedCard').addEventListener('click', () => {
+        localStorage.setItem('newPosts', 'false');
+    });
+	
+    // Simulate new content (for demo purposes)
+    function simulateNewContent() {
+        // Set new content flags (these would be set by your server or updates in real scenario)
+        localStorage.setItem('newVideos', 'true');
+        localStorage.setItem('newSongs', 'true');
+        localStorage.setItem('newPosts', 'true');
+        localStorage.setItem('newNatureImages', 'true');
+    }
+
+    // Uncomment the line below to simulate new content
+    // simulateNewContent();
+
+    // Check for new content when the page loads
+    checkForNewContent();
+</script>
+
+</body>
+</html>
